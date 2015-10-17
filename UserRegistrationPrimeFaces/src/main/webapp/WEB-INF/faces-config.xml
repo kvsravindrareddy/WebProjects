@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+	<!-- Navigation for user login -->
+	<navigation-rule>
+		<from-view-id>/UserLogin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Success.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/Failure.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Navigation for user registration -->
+	<navigation-rule>
+		<from-view-id>/UserRegistration.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/SuccessRegister.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/FailureRegister.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Navigation for SMS details -->
+	<navigation-rule>
+		<from-view-id>/sms.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/smssuccess.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Navigation for SMS details -->
+	<navigation-rule>
+		<from-view-id>/email.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/emailsentsuccess.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

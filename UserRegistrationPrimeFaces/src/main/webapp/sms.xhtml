@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+	<h1>Send SMS to site owner, if you want immediate response</h1>
+	<h:form>
+		<p:fieldset legend="Send SMS" widgetVar="regWidget"
+			style="width: 600px;">
+			<h:panelGrid column="3" width="550" border="0">
+				<h:outputLabel value="Visitor Name *"></h:outputLabel>
+				<p:inputText id="visitorName" value="#{smsController.visitorName}"
+					required="true" requiredMessage="Enter your name"
+					placeholder="Enter your name" size="20"></p:inputText>
+
+				<h:outputLabel value="Mobile Number *"></h:outputLabel>
+				<p:inputText id="visitorMobileNumber"
+					value="#{smsController.visiterContactNum}" required="true"
+					requiredMessage="Enter mobile number"
+					placeholder="Enter Mobile Number" size="20"></p:inputText>
+
+				<h:outputLabel value="Message text *"></h:outputLabel>
+				<!-- <p:inputText id="smsTxtBox" value="#{smsController.smsText}"></p:inputText> -->
+				<p:inputTextarea rows="5" cols="20" counter="display" maxlength="50"
+					counterTemplate="{0} characters remaining." autoResize="false" />
+				<h:outputText id="display" />
+				<h:commandButton action="#{smsController.sendSMS}" value="Send SMS"></h:commandButton>
+			</h:panelGrid>
+		</p:fieldset>
+	</h:form>
+</body>
+</html>

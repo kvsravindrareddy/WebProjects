@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+	<h1>Send email to the site owner</h1>
+	<h:form>
+		<p:fieldset legend="Send SMS" widgetVar="regWidget"
+			style="width: 600px;">
+			<h:panelGrid column="3" width="550" border="0">
+				<h:outputLabel value="Visitor Name *"></h:outputLabel>
+				<p:inputText id="visitorName" value="#{emailController.visitorName}"
+					required="true" requiredMessage="Enter your name"
+					placeholder="Enter your name" size="20"></p:inputText>
+
+				<h:outputLabel value="Mobile Number *"></h:outputLabel>
+				<p:inputText id="visitorMobileNumber"
+					value="#{emailController.visitorMobileNumber}" required="true"
+					requiredMessage="Enter mobile number"
+					placeholder="Enter Mobile Number" size="20"></p:inputText>
+
+				<h:outputLabel value="Email *"></h:outputLabel>
+				<p:inputText id="visitorEmail"
+					value="#{emailController.visitorEmail}" required="true"
+					requiredMessage="Enter Email address"
+					placeholder="Enter Email address" size="20"></p:inputText>
+
+				<h:outputLabel value="Email text *"></h:outputLabel>
+				<p:editor value="#{emailController.msg}"></p:editor>
+				<h:commandButton action="#{emailController.sendEnquiryEmail}"
+					value="Send Email"></h:commandButton>
+			</h:panelGrid>
+		</p:fieldset>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14445746670070" configfile="/UserRegistrationPrimeFaces/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="UserLogin.xhtml" id="pf14445746786831" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14445746786842 pf14445818583312" path="/UserLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Success.xhtml" id="pf14445746786843" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14445746786842" path="/Success.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Failure.xhtml" id="pf14445818583313" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14445818583312" path="/Failure.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UserRegistration.xhtml" id="pf14445873676906" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14445873676907 pf14447608459042" path="/UserRegistration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="SuccessRegister.xhtml" id="pf14445873676909" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14445873676907" path="/SuccessRegister.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="FailureRegister.xhtml" id="pf144458736769010" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14447608459042" path="/FailureRegister.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="sms.xhtml" id="pf14447608690335" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14447608690336" path="/sms.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="smssuccess.xhtml" id="pf14447608690337" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14447608690336" path="/smssuccess.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="email.xhtml" id="pf14447903911571" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14447903911572" path="/email.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="emailsentsuccess.xhtml" id="pf14447903911573" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14447903911572" path="/emailsentsuccess.xhtml"/>
+  <links id="pf14445746786842" target="pf14445746786843" source="pf14445746786831" outcome="success"/>
+  <links id="pf14445818583312" target="pf14445818583313" source="pf14445746786831" outcome="failure"/>
+  <links id="pf14445873676907" target="pf14445873676909" source="pf14445873676906" outcome="success"/>
+  <links id="pf14447608459042" target="pf144458736769010" source="pf14445873676906" outcome="failure"/>
+  <links id="pf14447608690336" target="pf14447608690337" source="pf14447608690335" outcome="success"/>
+  <links id="pf14447903911572" target="pf14447903911573" source="pf14447903911571" outcome="success"/>
+</pageflow:Pageflow>

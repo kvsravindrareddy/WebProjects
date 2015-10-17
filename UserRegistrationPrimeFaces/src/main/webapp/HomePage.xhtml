@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+	<title>Home Page</title>
+</h:head>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jssor.slider-20.mini.js"></script>
+<!-- use jssor.slider-20.debug.js instead for debug -->
+<script>
+		jQuery(document).ready(function($) {
+
+			var jssor_1_options = {
+				$AutoPlay : true,
+				$ArrowNavigatorOptions : {
+					$Class : $JssorArrowNavigator$
+				},
+				$BulletNavigatorOptions : {
+					$Class : $JssorBulletNavigator$
+				}
+			};
+
+			var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+			//responsive code begin
+			//you can remove responsive code if you don't want the slider scales while window resizes
+			function ScaleSlider() {
+				var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+				if (refSize) {
+					refSize = Math.min(refSize, 1050);
+					jssor_1_slider.$ScaleWidth(refSize);
+				} else {
+					window.setTimeout(ScaleSlider, 30);
+				}
+			}
+			ScaleSlider();
+			$(window).bind("load", ScaleSlider);
+			$(window).bind("resize", ScaleSlider);
+			$(window).bind("orientationchange", ScaleSlider);
+			//responsive code end
+		});
+	</script>
+
+<style>
+
+/* jssor slider bullet navigator skin 01 css */
+/*
+        .jssorb01 div           (normal)
+        .jssorb01 div:hover     (normal mouseover)
+        .jssorb01 .av           (active)
+        .jssorb01 .av:hover     (active mouseover)
+        .jssorb01 .dn           (mousedown)
+        */
+.jssorb01 {
+	position: absolute;
+}
+
+.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+	position: absolute;
+	/* size of bullet elment */
+	width: 12px;
+	height: 12px;
+	filter: alpha(opacity = 70);
+	opacity: .7;
+	overflow: hidden;
+	cursor: pointer;
+	border: #000 1px solid;
+}
+
+.jssorb01 div {
+	background-color: gray;
+}
+
+.jssorb01 div:hover, .jssorb01 .av:hover {
+	background-color: #d3d3d3;
+}
+
+.jssorb01 .av {
+	background-color: #fff;
+}
+
+.jssorb01 .dn, .jssorb01 .dn:hover {
+	background-color: #555555;
+}
+
+/* jssor slider arrow navigator skin 02 css */
+/*
+        .jssora02l                  (normal)
+        .jssora02r                  (normal)
+        .jssora02l:hover            (normal mouseover)
+        .jssora02r:hover            (normal mouseover)
+        .jssora02l.jssora02ldn      (mousedown)
+        .jssora02r.jssora02rdn      (mousedown)
+        */
+.jssora02l, .jssora02r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background: url('img/a02.png') no-repeat;
+	overflow: hidden;
+}
+
+.jssora02l {
+	background-position: -3px -33px;
+}
+
+.jssora02r {
+	background-position: -63px -33px;
+}
+
+.jssora02l:hover {
+	background-position: -123px -33px;
+}
+
+.jssora02r:hover {
+	background-position: -183px -33px;
+}
+
+.jssora02l.jssora02ldn {
+	background-position: -3px -33px;
+}
+
+.jssora02r.jssora02rdn {
+	background-position: -63px -33px;
+}
+
+#header {
+	background-color: #8FBC8F;
+	color: #04B404;
+	font-size: 100%;
+	font-family: 'comic sans ms';
+	text-align: center;
+	padding: 5px;
+}
+
+table, tr, td {
+	border: 1px solid black;
+}
+
+#scrollText {
+	background-color: #8FBC8F;
+	color: red;
+}
+
+#footer {
+	background-color: #8FBC8F;
+	color: #190707;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
+</style>
+
+<body>
+	<h:form>
+		<div id="header">
+			<h1>Welcome to Kakarla's website</h1>
+		</div>
+
+		<div id="menu">
+
+			<p:growl id="messages" />
+			<p:menubar>
+				<p:submenu label="Home"></p:submenu>
+				<p:submenu label="Gallery"></p:submenu>
+				<p:submenu label="Contact us">
+					<p:menuitem value="SMS" url="/sms.xhtml"></p:menuitem>
+					<p:menuitem value="Email" url="/email.xhtml"></p:menuitem>
+					<p:menuitem value="Call"></p:menuitem>
+				</p:submenu>
+				<p:submenu label="Availabilities"></p:submenu>
+				<p:submenu label="Help" icon="ui-icon-help" />
+
+				<f:facet name="options">
+					<p:inputText style="margin-right:10px" placeholder="Search" />
+					<p:button href="/UserLogin.xhtml" value="SignIn"></p:button>
+					<p:button href="/UserRegistration.xhtml" value="SignUp"></p:button>
+				</f:facet>
+
+			</p:menubar>
+		</div>
+		<!-- scrolling images -->
+		<center>
+			<table width="1050">
+				<tr>
+					<td height="400">
+						<div id="jssor_1"
+							style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1050px; height: 400px; overflow: hidden; visibility: hidden;">
+							<!-- Loading Screen -->
+							<div data-u="loading"
+								style="position: absolute; top: 0px; left: 0px;">
+								<div
+									style="filter: alpha(opacity = 70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+								<div
+									style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+							</div>
+							<div data-u="slides"
+								style="cursor: default; position: relative; top: 0px; left: 0px; width: 1050px; height: 400px; overflow: hidden;">
+								<div style="display: none;">
+									<img data-u="image" src="images/main1.jpg" />
+								</div>
+								<div style="display: none;">
+									<img data-u="image" src="images/main2.jpg" />
+								</div>
+								<div style="display: none;">
+									<img data-u="image" src="images/main3.jpg" />
+								</div>
+								<div style="display: none;">
+									<img data-u="image" src="images/main4.jpg" />
+								</div>
+							</div>
+							<!-- Bullet Navigator -->
+							<div data-u="navigator" class="jssorb01"
+								style="bottom: 16px; right: 10px;">
+								<div data-u="prototype" style="width: 12px; height: 12px;"></div>
+							</div>
+							<!-- Arrow Navigator -->
+							<span data-u="arrowleft" class="jssora02l"
+								style="top: 123px; left: 8px; width: 55px; height: 55px;"
+								data-autocenter="2"></span> <span data-u="arrowright"
+								class="jssora02r"
+								style="top: 123px; right: 8px; width: 55px; height: 55px;"
+								data-autocenter="2"></span>
+						</div>
+					</td>
+				</tr>
+				<tr id="scrollText">
+					<td height="30"><f:verbatim>
+							<marquee behavior="scroll" direction="left">Contact +91-9986002882</marquee>
+						</f:verbatim></td>
+				</tr>
+				<tr>
+					<td height="500"></td>
+				</tr>
+			</table>
+		</center>
+
+		<div id="footer">Copyright © https://www.kvsravindrareddy.com</div>
+
+	</h:form>
+</body>
+</html>
