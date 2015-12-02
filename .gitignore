@@ -1,1 +1,3 @@
-*.class
+*/common/
+
+UserRegistrationPrimeFaces/src/main/java/com/ravindra/common/
