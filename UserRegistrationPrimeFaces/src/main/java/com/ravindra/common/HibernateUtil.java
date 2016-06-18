@@ -5,8 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
-*@Author : RavindraReddy
+* @Author : RavindraReddy
 * Project : Testing
+* 
 */
 public class HibernateUtil{
 
