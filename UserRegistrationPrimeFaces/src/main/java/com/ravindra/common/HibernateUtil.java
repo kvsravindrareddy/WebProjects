@@ -4,7 +4,10 @@ import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil {
+/**
+*@Author : RavindraReddy
+*/
+public class HibernateUtil{
 
 	private static final Logger logger = Logger.getLogger(HibernateUtil.class);
 
