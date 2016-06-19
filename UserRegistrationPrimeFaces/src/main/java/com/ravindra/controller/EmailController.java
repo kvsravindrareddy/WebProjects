@@ -3,7 +3,7 @@ package com.ravindra.controller;
 import javax.faces.bean.ManagedBean;
 
 import com.ravindra.common.SendMailTLS;
-
+//Email Controller to send email to user
 @ManagedBean(name="emailController")
 public class EmailController {
 	private String visitorName;
