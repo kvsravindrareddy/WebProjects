@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 * @Author : RavindraReddy
 * Project : Testing
 */
-public class HibernateUtil{
+public class HibernateUtil {
 
 	private static final Logger logger = Logger.getLogger(HibernateUtil.class);
 
